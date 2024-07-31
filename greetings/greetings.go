@@ -17,9 +17,13 @@ func Hello(name string) (string, error) {
 	return message, nil
 }
 
-func Goodbye(name string) string {
+func Goodbye(name string) (string, error) {
+	if name == "" {
+		return "", errors.New("empty name")
+	}
+	
 	message := fmt.Sprintf("Goodbye, %v. Talk soon!", name)
-	return message
+	return message, nil
 }
 
 

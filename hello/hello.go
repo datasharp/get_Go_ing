@@ -12,13 +12,16 @@ func main() {
     log.SetFlags(0)
 
     // request greeting message
-    message, err := greetings.Hello("")
+    message, err := greetings.Hello("Gladys")
     if err != nil {
         log.Fatal(err) // fatal: print error and stop function
     }
     // no error, then print
     fmt.Println(message)
 
-    message = greetings.Goodbye("Gladys")
+    message, err = greetings.Goodbye("")
+    if err != nil {
+        log.Fatal(err) 
+    }
     fmt.Println(message)
 }
